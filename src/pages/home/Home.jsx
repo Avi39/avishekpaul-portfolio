@@ -29,7 +29,7 @@ const Home = () => {
                 <div>
                     <p className='text-center text-5xl font-extrabold mt-4'>About me</p>
                     <div className='mt-8 mb-8'>
-                        <p className='text-xl text-slate-900 italic'>Iam a Graduate of Computer Science & engineering department.I have a skill of frontend & backend.I ensure that the sites which i develope these are look good by meet user expectations, they run smoothly and offer easy access points with no loading issues between pages or error messages. I also have some curriculumn activities like iam a volunteer of YOUTH VOICE</p>
+                        <p className='text-xl text-slate-900 italic'>Iam a Graduate of Computer Science & engineering department.I have a skill of frontend & backend.I ensure that the sites which i develope these are look good by meet user expectations, they run smoothly and offer easy access points with no loading issues between pages or error messages. I also have some curriculumn activities like iam a volunteer of YOUTH VOICE.</p>
                     </div>
                 </div>
             </section>
@@ -173,39 +173,31 @@ const Home = () => {
                 <button className="btn btn-active btn-primary w-2/3 ml-48 mt-4 mb-8">see more projects</button>
             </section>
             <section>
-                <p className='text-center text-5xl font-extrabold mt-16 mb-20'>Contact Information</p>
-                <div>
-                    <div className="hero min-h-screen bg-base-200">
-                        <div className="hero-content flex-col lg:flex-row-reverse">
-                            <div className="text-center lg:text-left">
-                                <h1 className="text-5xl font-bold">Login now!</h1>
-                                <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                            </div>
-                            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                                <div className="card-body">
-                                    <div className="form-control">
-                                        <label className="label">
-                                            <span className="label-text">Email</span>
-                                        </label>
-                                        <input type="text" placeholder="email" className="input input-bordered" />
-                                    </div>
-                                    <div className="form-control">
-                                        <label className="label">
-                                            <span className="label-text">Password</span>
-                                        </label>
-                                        <input type="text" placeholder="password" className="input input-bordered" />
-                                        <label className="label">
-                                            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                        </label>
-                                    </div>
-                                    <div className="form-control mt-6">
-                                        <button className="btn btn-primary">Login</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <p className='text-center text-5xl font-extrabold mt-20 mb-8'>Contact Information</p>
+               <div className='grid grid-cols-2 gap-8 ml-40'>
+                <div className='ml-32'>
+                <input type="text" placeholder="First Name" className="input input-bordered w-full max-w-xs" />
                 </div>
+                <div>
+                <input type="text" placeholder="Last Name" className="input input-bordered w-full max-w-xs" />
+                </div>
+                <div className='ml-32'>
+                <input type="email" placeholder="Email" className="input input-bordered w-full max-w-xs" />
+                </div>
+                <div>
+                <input type="text" placeholder="Phone" className="input input-bordered w-full max-w-xs" />
+                </div>
+               </div>
+               <div className='ml-72 mt-8'>
+                <input type="text" placeholder="Address" className="input input-bordered w-full max-w-lg" />
+                </div>
+                <div className='ml-72 mt-8'>
+                <textarea placeholder="Type your message here" className="textarea textarea-bordered textarea-lg w-full max-w-xs" ></textarea>
+                </div>
+                <div className='ml-72 mt-8 mb-20'>
+                <button className="btn btn-neutral w-7/12">submit</button>
+                </div>
+
             </section>
 
         </div>
