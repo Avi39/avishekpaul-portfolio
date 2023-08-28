@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useRef } from 'react';
 import pic from '../../assets/avishek.png'
 import react from '../../assets/react2.jpg'
 import nodejs from '../../assets/nodejs.png'
@@ -13,10 +13,20 @@ import Project_tweleve from '../../assets/project-12.png'
 import Project_eleven from '../../assets/project-11.png'
 import Project_ten from '../../assets/project-10.png'
 import { Link } from 'react-router-dom';
-
-
+import emailjs from '@emailjs/browser';
 
 const Home = () => {
+    const form = useRef();
+    const sendEmail = (e) => {
+        e.preventDefault();
+    
+        emailjs.sendForm('service_tuyyd18', 'template_tzguwri', form.current, 'pRvKGjQL9e8ysYewT')
+          .then((result) => {
+              console.log(result.text);
+          }, (error) => {
+              console.log(error.text);
+          });
+      };
     return (
         <div>
             <section>
@@ -174,29 +184,41 @@ const Home = () => {
             </section>
             <section>
                 <p className='text-center text-5xl font-extrabold mt-20 mb-8'>Contact Information</p>
-               <div className='grid grid-cols-2 gap-8 ml-40'>
+                <form ref={form} onSubmit={sendEmail}>
+                    <div className='grid grid-cols-2 gap-8 ml-40'>
                 <div className='ml-32'>
-                <input type="text" placeholder="First Name" className="input input-bordered w-full max-w-xs" />
+                <input type="text" name="from_name" placeholder="First Name" className="input input-bordered w-full max-w-xs" />
                 </div>
                 <div>
-                <input type="text" placeholder="Last Name" className="input input-bordered w-full max-w-xs" />
+                <input type="text" name="from_last_name" placeholder="Last Name" className="input input-bordered w-full max-w-xs" />
                 </div>
                 <div className='ml-32'>
-                <input type="email" placeholder="Email" className="input input-bordered w-full max-w-xs" />
+                <input type="email" name="from_email" placeholder="Email" className="input input-bordered w-full max-w-xs" />
                 </div>
                 <div>
-                <input type="text" placeholder="Phone" className="input input-bordered w-full max-w-xs" />
+                <input type="text" name="from_phone" placeholder="Phone" className="input input-bordered w-full max-w-xs" />
                 </div>
                </div>
                <div className='ml-72 mt-8'>
-                <input type="text" placeholder="Address" className="input input-bordered w-full max-w-lg" />
+                <input type="text" name="from_address" placeholder="Address" className="input input-bordered w-full max-w-lg" />
                 </div>
                 <div className='ml-72 mt-8'>
-                <textarea placeholder="Type your message here" className="textarea textarea-bordered textarea-lg w-full max-w-xs" ></textarea>
+                <textarea name="message" placeholder="Type your message here" className="textarea textarea-bordered textarea-lg w-full max-w-xs" ></textarea>
                 </div>
                 <div className='ml-72 mt-8 mb-20'>
-                <button className="btn btn-neutral w-7/12">submit</button>
+                <input type='submit' value="Submit" className="btn btn-neutral w-7/12"></input>
                 </div>
+                </form>
+                
+                {/* <form ref={form} onSubmit={sendEmail} className='mb-8'>
+                    <label>Name</label>
+                    <input type="text" name="from_name" />
+                    <label>Email</label>
+                    <input type="email" name="from_email" />
+                    <label>Message</label>
+                    <textarea name="message" />
+                    <input type="submit" value="Send" />
+                </form> */}
 
             </section>
 
